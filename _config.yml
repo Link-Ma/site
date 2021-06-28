@@ -28,7 +28,7 @@ twitter_username: realbro
 github_username:  link-ma
 
 # Build settings
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
 
