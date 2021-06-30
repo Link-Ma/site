@@ -28,9 +28,9 @@ twitter_username: realbro
 github_username:  link-ma
 
 # Build settings
-theme: jekyll-theme-cayman
-plugins:
-  - jekyll-feed
+theme: minimal
+# plugins:
+#   - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
