@@ -4,13 +4,29 @@
   
   
   <entry>
-    <title></title>
+    <title>Paper-reading StackGan</title>
     <link href="/site/2021/07/08/StackGan/"/>
     <url>/site/2021/07/08/StackGan/</url>
     
-    <content type="html"><![CDATA[<p>title: Paper-reading StackGan<br>tags: </p><ul><li>GAN </li><li>cv </li><li>paper-reading</li></ul><p>categories: cv</p><p><strong>Paper:</strong> StackGan <a href="https://links.jianshu.com/go?to=https://arxiv.org/pdf/1612.03242.pdf">https://arxiv.org/pdf/1612.03242.pdf</a></p><p><strong>Task:</strong> Text to Image</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li>Two stage GAN: Low-quality images are generated in stage 1 and parameters frozened to feed stage-2 GAN to generate high resolution images.</li><li>Conditional augmentation: To solve training data deficiency, they calculat mean and variance in a FC layer following the word embedding layer to sample conditional variant c. They also apply KL divergence over the above distribution and normal one(N(0,1)) as regulization. It helps generate more training data and after increasing sampling randomness, one sentence can output different images.</li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>Paper:</strong> StackGan <a href="https://links.jianshu.com/go?to=https://arxiv.org/pdf/1612.03242.pdf">https://arxiv.org/pdf/1612.03242.pdf</a></p><p><strong>Task:</strong> Text to Image</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li>Two stage GAN: Low-quality images are generated in stage 1 and parameters frozened to feed stage-2 GAN to generate high resolution images.</li><li>Conditional augmentation: To solve training data deficiency, they calculat mean and variance in a FC layer following the word embedding layer to sample conditional variant c. They also apply KL divergence over the above distribution and normal one(N(0,1)) as regulization. It helps generate more training data and after increasing sampling randomness, one sentence can output different images.</li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
     
     
+    <categories>
+      
+      <category>cv</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>GAN</tag>
+      
+      <tag>cv</tag>
+      
+      <tag>paper-reading</tag>
+      
+    </tags>
     
   </entry>
   
