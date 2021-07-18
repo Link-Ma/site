@@ -18,9 +18,25 @@
   <meta name="author" content="Liqian Ma">
   <meta name="keywords" content="">
   
-  <title>Link&#39;s blog</title>
+  <title>Paper-reading textCNN - Link&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/site/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -48,7 +64,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,17 +163,58 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="This is the youngest version of you for the rest of your life.       Do first, then think and iterate!">
+            <span class="h2" id="subtitle" title="Paper-reading textCNN">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-08 00:24" pubdate>
+        July 8, 2021 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      156 words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3
+       mins
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> clicks
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -166,242 +223,143 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Paper-reading textCNN</h1>
+            
+            <div class="markdown-body">
+              <p><strong>Paper:</strong> TextCNN</p>
+<p><strong>Task:</strong> Sentence Classification</p>
+<p><strong>Abstracts:</strong> </p>
+<ol>
+<li>Based on static word embeddings from pretrained models, finetuning with basic CNN models may get good results.</li>
+<li>Finetuning pretrained word embeddings can be useful.</li>
+<li>Making use of both static and task-specific vectors is possible.</li>
+<li>They got SOTAs on 4/7 tasks for sentiment analysis and question classifications.</li>
+</ol>
+<p><strong>Introduction:</strong></p>
+<ol>
+<li>Deep learning</li>
+<li>word vectors</li>
+<li>CNN in NLP(semantic parsing, search query retrieving, and other traditional NLP tasks)</li>
+</ol>
+<p><strong>Model</strong></p>
+<p>![image-20210718163201737](/Users/yj/Library/Application Support/typora-user-images/image-20210718163201737.png)</p>
+<ol>
+<li>k-dimensional word embedding as input(2 channels static and non-static)</li>
+<li>kernel size {3<em>4</em>5}*k as different filters, then max pooling(mulple filters to produce multiple feature maps for one word)</li>
+<li>Fc layer with softmax</li>
+</ol>
+<p><strong>Non-static vs static</strong></p>
+<p>![image-20210718183738833](/Users/yj/Library/Application Support/typora-user-images/image-20210718183738833.png)</p>
+<p>Non-static(parameters are updated rather than frozened) is more specific and accurate on tasks.</p>
+<p><strong>Implementations:</strong></p>
+<p>TODO</p>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/site/2021/07/08/DQN/" target="_self">
-          Paper-reading DQN
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/site/2021/07/08/DQN/" target="_self">
-          
-          
-            
-          
-          Paper: DQN 
-Task: Play video games
-Challenges: 
-
-Lack of detail and low-quality problem for high resolution images.
-To get high-resolution images, there are too many up-sampling layers which make unst
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-08 00:24" pubdate>
-              2021-07-08
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/site/categories/Reinforcement-Learning/">Reinforcement Learning</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/site/tags/RL/">RL</a>
-            
-              <a href="/site/tags/paper-reading/">paper-reading</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/site/2021/07/08/StackGan/" target="_self">
-          Paper-reading StackGan
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/site/2021/07/08/StackGan/" target="_self">
-          
-          
-            
-          
-          Paper: StackGan https://arxiv.org/pdf/1612.03242.pdf
-Task: Text to Image
-Challenges: 
-
-Lack of detail and low-quality problem for high resolution images.
-To get high-resolution images, there are too m
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-08 00:24" pubdate>
-              2021-07-08
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/site/categories/cv/">cv</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/site/tags/paper-reading/">paper-reading</a>
-            
-              <a href="/site/tags/GAN/">GAN</a>
-            
-              <a href="/site/tags/cv/">cv</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/site/2021/07/08/textCNN/" target="_self">
-          Paper-reading textCNN
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/site/2021/07/08/textCNN/" target="_self">
-          
-          
-            
-          
-          Paper: TextCNN
-Task: Sentence Classification
-Abstracts: 
-
-Based on static word embeddings from pretrained models, finetuning with basic CNN models may get good results.
-Finetuning pretrained word embe
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-08 00:24" pubdate>
-              2021-07-08
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/site/categories/Natual-Language-Processing/">Natual Language Processing</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/site/tags/paper-reading/">paper-reading</a>
-            
-              <a href="/site/tags/NLP/">NLP</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/site/2021/06/30/hello-world/" target="_self">
-          Hello World
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/site/2021/06/30/hello-world/" target="_self">
-          
-          
-            
-          
-          Start creating today!It’s better late than none.
-The blog name is “Zoom In”, which reminds me to pay attention to the technical details in my career as a machine learning software engineer (for now). 
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-06-30 22:45" pubdate>
-              2021-06-30
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/site/tags/life/">life</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/site/categories/Natual-Language-Processing/">Natual Language Processing</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/site/tags/paper-reading/">paper-reading</a>
+                    
+                      <a class="hover-with-bg" href="/site/tags/NLP/">NLP</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/site/2021/07/08/StackGan/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Paper-reading StackGan</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/site/2021/06/30/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"suqMtrALlDpLizTsyaUB6WsN-gzGzoHsz","appKey":"dAI8lPOSwjwaYXlEiBblrlKH","placeholder":"say something.","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"en","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -505,9 +463,15 @@ The blog name is “Zoom In”, which reminds me to pay attention to the technic
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
 
 
 
