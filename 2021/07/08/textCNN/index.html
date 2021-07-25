@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"link-ma.github.io","root":"/site/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"link-ma.github.io","root":"/site/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/site/js/utils.js" ></script>
   <script  src="/site/js/color-schema.js" ></script>
@@ -252,14 +252,14 @@
 <li>CNN in NLP(semantic parsing, search query retrieving, and other traditional NLP tasks)</li>
 </ol>
 <p><strong>Model</strong></p>
-<p><img src="/images/textcnn1.jpg" srcset="/site/img/loading.gif" lazyload></p>
+<p><img src="/images/textcnn1.jpg"></p>
 <ol>
 <li>k-dimensional word embedding as input(2 channels static and non-static)</li>
 <li>kernel size {3*4*5}*k as different filters, then max pooling(mulple filters to produce multiple feature maps for one word)</li>
 <li>Fc layer with softmax</li>
 </ol>
 <p><strong>Non-static vs static</strong></p>
-<p><img src="/images/textcnn2.jpg" srcset="/site/img/loading.gif" lazyload></p>
+<p><img src="/images/textcnn2.jpg"></p>
 <p>Non-static(parameters are updated rather than frozened) is more specific and accurate on tasks.</p>
 <p><strong>Implementations:</strong></p>
 <p>TODO</p>
@@ -280,9 +280,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/site/tags/NLP/">NLP</a>
-                    
                       <a class="hover-with-bg" href="/site/tags/paper-reading/">paper-reading</a>
+                    
+                      <a class="hover-with-bg" href="/site/tags/NLP/">NLP</a>
                     
                   </div>
                 
@@ -293,9 +293,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/site/2021/07/25/Don&#39;t%20be%20carried%20away/">
+                      <a href="/site/2021/07/08/StackGan/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Don't be carried away</span>
+                        <span class="hidden-mobile">Paper-reading StackGan</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -303,8 +303,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/site/2021/07/08/StackGan/">
-                        <span class="hidden-mobile">Paper-reading StackGan</span>
+                      <a href="/site/2021/06/30/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -316,7 +316,7 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
+              <article class="comments" id="comments">
                 
                   
                 
@@ -452,10 +452,6 @@
 
 <!-- Plugins -->
 
-
-  
-    <script  src="/site/js/img-lazyload.js" ></script>
-  
 
 
 
