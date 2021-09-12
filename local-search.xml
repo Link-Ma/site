@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>Different technical roles</title>
+    <link href="/site/2021/09/11/technical%20talents/"/>
+    <url>/site/2021/09/11/technical%20talents/</url>
+    
+    <content type="html"><![CDATA[<p>For different team members in a tech organization or even different times a technician is in, there are different roles. Keep it in my mind, it may be useful to career planning and development. From my past work experience, here are role types I can think of:</p><ol><li>Business type. Deep understanding of business, technology trend in mind, systematic planning for future development.</li><li>Platform type. Technology depth and break-throughs.</li><li>Solution type. Technology breadth and being aware of technological cost, operational cost, ROI, and long-term process and mechanism.</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>technology zoom-out</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Some thoughts about technology management</title>
+    <link href="/site/2021/09/11/technology%20management/"/>
+    <url>/site/2021/09/11/technology%20management/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Sometimes-we-need-to-look-ahead-to-have-a-high-level-perspective-For-programmers-think-beyond-coding"><a href="#Sometimes-we-need-to-look-ahead-to-have-a-high-level-perspective-For-programmers-think-beyond-coding" class="headerlink" title="Sometimes we need to look ahead to have a high-level perspective. For programmers, think beyond coding!"></a>Sometimes we need to look ahead to have a high-level perspective. For programmers, think beyond coding!</h2><p>There goes a famous saying, a soldier who does not want to be a general is not a good soldier. For programmers, I am thinking about what CTOs might focus on. Here is what I can see for now.</p><ol><li>Less code. Legacy code and models can be really problemistic for teams. Not changeable, not moveable, not comprehensive as the team grows.</li><li>Minimum viable product(mvp) is badly needed to get credits and earn more investment and confidence.</li><li>Stability versus innovation. We need to strike a balance of the both. For large or developed companies, stability is the priority. Vice versa for startups.</li><li>Manage talents and technology like a flow. Just like what CFOs are doing with finance flow.</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>technology zoom-out</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Paper-reading GAN</title>
     <link href="/site/2021/09/10/GAN/"/>
     <url>/site/2021/09/10/GAN/</url>
@@ -55,32 +93,7 @@
       
       <tag>rules</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Paper-reading DQN</title>
-    <link href="/site/2021/07/07/DQN/"/>
-    <url>/site/2021/07/07/DQN/</url>
-    
-    <content type="html"><![CDATA[<p><strong>Paper:</strong> DQN </p><p><strong>Task:</strong> Play video games</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li><p>Image part:</p><p>Preprocessing: gray-scale(avg of 3 RGB channels)</p><p>Down-sampling: 210x160 to 110x84</p><p>Cropping: Get center game area 84x84</p><p>Game part:</p><p>Key frame: only obtain frames periodically(4 or 3 steps for 1)</p><p>Appy 4 frames as the input of Q-network to get historical info.</p><p>Reward clipping: only 3 rewards: +1, -1, 0</p><p>Reasons:</p><p>Image part: common operations.</p><p>Game part: </p><p>Key frame: 1. save time 2. reduce noise from tight actions 3. reduce the duration from action to reward signal.</p><p>4 frames: more context.</p><p>Reward clipping: despite the loss of info, it guarantees the same reward scale for all games.</p></li><li><p>Replay buffer</p><p>definition: a queue to store past transitions for sampling during training</p><p>How to use: proper size. if too little, training data distribution may change instantly; if too large, reward signal may be too sparse.</p><p>Reasons: 1. SGD requires independent samples, but neighboring transitions are highly relative. 2. a pool of transitions make the training more stable. 3. for offline learning, it reduces the variance of updates. 4. multiple sampling allowed to increase data efficiency.</p></li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Reinforcement Learning</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>RL</tag>
-      
-      <tag>paper-reading</tag>
+      <tag>zoom-out</tag>
       
     </tags>
     
@@ -105,11 +118,38 @@
     
     <tags>
       
-      <tag>paper-reading</tag>
-      
       <tag>model compression</tag>
       
+      <tag>paper-reading</tag>
+      
       <tag>edge</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Paper-reading DQN</title>
+    <link href="/site/2021/07/07/DQN/"/>
+    <url>/site/2021/07/07/DQN/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Paper:</strong> DQN </p><p><strong>Task:</strong> Play video games</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li><p>Image part:</p><p>Preprocessing: gray-scale(avg of 3 RGB channels)</p><p>Down-sampling: 210x160 to 110x84</p><p>Cropping: Get center game area 84x84</p><p>Game part:</p><p>Key frame: only obtain frames periodically(4 or 3 steps for 1)</p><p>Appy 4 frames as the input of Q-network to get historical info.</p><p>Reward clipping: only 3 rewards: +1, -1, 0</p><p>Reasons:</p><p>Image part: common operations.</p><p>Game part: </p><p>Key frame: 1. save time 2. reduce noise from tight actions 3. reduce the duration from action to reward signal.</p><p>4 frames: more context.</p><p>Reward clipping: despite the loss of info, it guarantees the same reward scale for all games.</p></li><li><p>Replay buffer</p><p>definition: a queue to store past transitions for sampling during training</p><p>How to use: proper size. if too little, training data distribution may change instantly; if too large, reward signal may be too sparse.</p><p>Reasons: 1. SGD requires independent samples, but neighboring transitions are highly relative. 2. a pool of transitions make the training more stable. 3. for offline learning, it reduces the variance of updates. 4. multiple sampling allowed to increase data efficiency.</p></li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Reinforcement Learning</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>paper-reading</tag>
+      
+      <tag>RL</tag>
       
     </tags>
     
@@ -211,7 +251,7 @@
     
     <tags>
       
-      <tag>life</tag>
+      <tag>life zoom-out</tag>
       
     </tags>
     
