@@ -4,17 +4,25 @@
   
   
   <entry>
-    <title>Different technical roles</title>
-    <link href="/site/2021/09/11/technical%20talents/"/>
-    <url>/site/2021/09/11/technical%20talents/</url>
+    <title>Create a trend</title>
+    <link href="/site/2021/09/12/technology%20trend/"/>
+    <url>/site/2021/09/12/technology%20trend/</url>
     
-    <content type="html"><![CDATA[<p>For different team members in a tech organization or even different times a technician is in, there are different roles. Keep it in my mind, it may be useful to career planning and development. From my past work experience, here are role types I can think of:</p><ol><li>Business type. Deep understanding of business, technology trend in mind, systematic planning for future development.</li><li>Platform type. Technology depth and break-throughs.</li><li>Solution type. Technology breadth and being aware of technological cost, operational cost, ROI, and long-term process and mechanism.</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>Today, Andrew Ng announced a campaign to have <a href="https://www.forbes.com/sites/gilpress/2021/06/16/andrew-ng-launches-a-campaign-for-data-centric-ai/?sh=704aea0974f5">data-centric AI</a> which is inspiring, but I am thinking about what he is doing as a thought leader.</p><p>It is said that following the trend is always smart, but creating a trend is even smarter and respectable. For leaders either in academic field or organizations, one of their main task is to create new concepts, sell them, make them happen, and be responsible for the outcomes. As Jeff Bezos said, leaders have 2 to 3 important decisions to make every day. Leaders also have 2 to 3 trends to create every year. As engineers become more versant as individual contributors, they may also put themselves into leaders’ positions and think in their shoes.</p>]]></content>
     
+    
+    <categories>
+      
+      <category>zoom-out</category>
+      
+    </categories>
     
     
     <tags>
       
-      <tag>technology zoom-out</tag>
+      <tag>zoom-out</tag>
+      
+      <tag>technology</tag>
       
     </tags>
     
@@ -30,10 +38,45 @@
     <content type="html"><![CDATA[<h2 id="Sometimes-we-need-to-look-ahead-to-have-a-high-level-perspective-For-programmers-think-beyond-coding"><a href="#Sometimes-we-need-to-look-ahead-to-have-a-high-level-perspective-For-programmers-think-beyond-coding" class="headerlink" title="Sometimes we need to look ahead to have a high-level perspective. For programmers, think beyond coding!"></a>Sometimes we need to look ahead to have a high-level perspective. For programmers, think beyond coding!</h2><p>There goes a famous saying, a soldier who does not want to be a general is not a good soldier. For programmers, I am thinking about what CTOs might focus on. Here is what I can see for now.</p><ol><li>Less code. Legacy code and models can be really problemistic for teams. Not changeable, not moveable, not comprehensive as the team grows.</li><li>Minimum viable product(mvp) is badly needed to get credits and earn more investment and confidence.</li><li>Stability versus innovation. We need to strike a balance of the both. For large or developed companies, stability is the priority. Vice versa for startups.</li><li>Manage talents and technology like a flow. Just like what CFOs are doing with finance flow.</li></ol>]]></content>
     
     
+    <categories>
+      
+      <category>zoom-out</category>
+      
+    </categories>
+    
     
     <tags>
       
-      <tag>technology zoom-out</tag>
+      <tag>zoom-out</tag>
+      
+      <tag>technology</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Different technical roles</title>
+    <link href="/site/2021/09/11/technical%20talents/"/>
+    <url>/site/2021/09/11/technical%20talents/</url>
+    
+    <content type="html"><![CDATA[<p>For different team members in a tech organization or even different times a technician is in, there are different roles. Keep it in my mind, it may be useful to career planning and development. From my past work experience, here are role types I can think of:</p><ol><li>Business type. Deep understanding of business, technology trend in mind, systematic planning for future development.</li><li>Platform type. Technology depth and break-throughs.</li><li>Solution type. Technology breadth and being aware of technological cost, operational cost, ROI, and long-term process and mechanism.</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>zoom-out</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>zoom-out</tag>
+      
+      <tag>technology</tag>
       
     </tags>
     
@@ -58,9 +101,9 @@
     
     <tags>
       
-      <tag>paper-reading</tag>
-      
       <tag>cv</tag>
+      
+      <tag>paper-reading</tag>
       
       <tag>gan</tag>
       
@@ -80,7 +123,7 @@
     
     <categories>
       
-      <category>thinking</category>
+      <category>zoom-out</category>
       
     </categories>
     
@@ -118,67 +161,11 @@
     
     <tags>
       
+      <tag>paper-reading</tag>
+      
       <tag>model compression</tag>
       
-      <tag>paper-reading</tag>
-      
       <tag>edge</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Paper-reading DQN</title>
-    <link href="/site/2021/07/07/DQN/"/>
-    <url>/site/2021/07/07/DQN/</url>
-    
-    <content type="html"><![CDATA[<p><strong>Paper:</strong> DQN </p><p><strong>Task:</strong> Play video games</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li><p>Image part:</p><p>Preprocessing: gray-scale(avg of 3 RGB channels)</p><p>Down-sampling: 210x160 to 110x84</p><p>Cropping: Get center game area 84x84</p><p>Game part:</p><p>Key frame: only obtain frames periodically(4 or 3 steps for 1)</p><p>Appy 4 frames as the input of Q-network to get historical info.</p><p>Reward clipping: only 3 rewards: +1, -1, 0</p><p>Reasons:</p><p>Image part: common operations.</p><p>Game part: </p><p>Key frame: 1. save time 2. reduce noise from tight actions 3. reduce the duration from action to reward signal.</p><p>4 frames: more context.</p><p>Reward clipping: despite the loss of info, it guarantees the same reward scale for all games.</p></li><li><p>Replay buffer</p><p>definition: a queue to store past transitions for sampling during training</p><p>How to use: proper size. if too little, training data distribution may change instantly; if too large, reward signal may be too sparse.</p><p>Reasons: 1. SGD requires independent samples, but neighboring transitions are highly relative. 2. a pool of transitions make the training more stable. 3. for offline learning, it reduces the variance of updates. 4. multiple sampling allowed to increase data efficiency.</p></li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Reinforcement Learning</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>paper-reading</tag>
-      
-      <tag>RL</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Paper-reading StackGan</title>
-    <link href="/site/2021/07/07/StackGan/"/>
-    <url>/site/2021/07/07/StackGan/</url>
-    
-    <content type="html"><![CDATA[<p><strong>Paper:</strong> StackGan <a href="https://links.jianshu.com/go?to=https://arxiv.org/pdf/1612.03242.pdf">https://arxiv.org/pdf/1612.03242.pdf</a></p><p><strong>Task:</strong> Text to Image</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li>Two stage GAN: Low-quality images are generated in stage 1 and parameters frozened to feed stage-2 GAN to generate high resolution images.</li><li>Conditional augmentation: To solve training data deficiency, they calculat mean and variance in a FC layer following the word embedding layer to sample conditional variant c. They also apply KL divergence over the above distribution and normal one(N(0,1)) as regulization. It helps generate more training data and after increasing sampling randomness, one sentence can output different images.</li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>cv</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>paper-reading</tag>
-      
-      <tag>cv</tag>
-      
-      <tag>GAN</tag>
       
     </tags>
     
@@ -241,6 +228,62 @@
   
   
   <entry>
+    <title>Paper-reading DQN</title>
+    <link href="/site/2021/07/07/DQN/"/>
+    <url>/site/2021/07/07/DQN/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Paper:</strong> DQN </p><p><strong>Task:</strong> Play video games</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li><p>Image part:</p><p>Preprocessing: gray-scale(avg of 3 RGB channels)</p><p>Down-sampling: 210x160 to 110x84</p><p>Cropping: Get center game area 84x84</p><p>Game part:</p><p>Key frame: only obtain frames periodically(4 or 3 steps for 1)</p><p>Appy 4 frames as the input of Q-network to get historical info.</p><p>Reward clipping: only 3 rewards: +1, -1, 0</p><p>Reasons:</p><p>Image part: common operations.</p><p>Game part: </p><p>Key frame: 1. save time 2. reduce noise from tight actions 3. reduce the duration from action to reward signal.</p><p>4 frames: more context.</p><p>Reward clipping: despite the loss of info, it guarantees the same reward scale for all games.</p></li><li><p>Replay buffer</p><p>definition: a queue to store past transitions for sampling during training</p><p>How to use: proper size. if too little, training data distribution may change instantly; if too large, reward signal may be too sparse.</p><p>Reasons: 1. SGD requires independent samples, but neighboring transitions are highly relative. 2. a pool of transitions make the training more stable. 3. for offline learning, it reduces the variance of updates. 4. multiple sampling allowed to increase data efficiency.</p></li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Reinforcement Learning</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>paper-reading</tag>
+      
+      <tag>RL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Paper-reading StackGan</title>
+    <link href="/site/2021/07/07/StackGan/"/>
+    <url>/site/2021/07/07/StackGan/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Paper:</strong> StackGan <a href="https://links.jianshu.com/go?to=https://arxiv.org/pdf/1612.03242.pdf">https://arxiv.org/pdf/1612.03242.pdf</a></p><p><strong>Task:</strong> Text to Image</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li>Two stage GAN: Low-quality images are generated in stage 1 and parameters frozened to feed stage-2 GAN to generate high resolution images.</li><li>Conditional augmentation: To solve training data deficiency, they calculat mean and variance in a FC layer following the word embedding layer to sample conditional variant c. They also apply KL divergence over the above distribution and normal one(N(0,1)) as regulization. It helps generate more training data and after increasing sampling randomness, one sentence can output different images.</li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>cv</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>cv</tag>
+      
+      <tag>paper-reading</tag>
+      
+      <tag>GAN</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/site/2021/06/30/hello-world/"/>
     <url>/site/2021/06/30/hello-world/</url>
@@ -248,10 +291,18 @@
     <content type="html"><![CDATA[<h2 id="Start-creating-today"><a href="#Start-creating-today" class="headerlink" title="Start creating today!"></a>Start creating today!</h2><p>It’s better late than none.</p><p>The blog name is “Zoom In”, which reminds me to pay attention to the technical details in my career as a machine learning software engineer (for now). I will leave technical notes about artificial intelligence, software engineering and more. In the years to come, I would like to be a <strong>“full-stack” MLE</strong> , skilled in general machine learning, recommendation, computer vision, NLP, reinforcement learning, auto-pilot, and related development skills. Keep it up!!!</p><p>The last but not the least, there will be a “Zoom Out” blog definitely, which focuses on ideas and thoughts in a bigger picture beyond technology. It’s said that the more you get versent in technical skills, the less you think with scope and dimension. Hope it will help me think out of the box as not only an engineer, but also an innovator.</p>]]></content>
     
     
+    <categories>
+      
+      <category>zoom-out</category>
+      
+    </categories>
+    
     
     <tags>
       
-      <tag>life zoom-out</tag>
+      <tag>life</tag>
+      
+      <tag>zoom-out</tag>
       
     </tags>
     
