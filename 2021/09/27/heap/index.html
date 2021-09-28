@@ -18,7 +18,7 @@
   <meta name="author" content="Liqian Ma">
   <meta name="keywords" content="">
   
-  <title>Paper-reading textCNN - Link&#39;s blog</title>
+  <title>heap - Link&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Paper-reading textCNN">
+            <span class="h2" id="subtitle" title="heap">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-07 11:24" pubdate>
-        July 7, 2021 am
+      <time datetime="2021-09-27 20:16" pubdate>
+        September 27, 2021 pm
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      132 words
+      410 words
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      8
        mins
     </span>
   
@@ -233,36 +233,26 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Paper-reading textCNN</h1>
+            <h1 style="display: none">heap</h1>
             
             <div class="markdown-body">
-              <p><strong>Paper:</strong> TextCNN</p>
-<p><strong>Task:</strong> Sentence Classification</p>
-<p><strong>Abstracts:</strong> </p>
+              <p>Heap is an intricate data structure. By maintaining a binary tree structure without external strorage, it is widely used in many cases like sorting, topk elements, and others. Here are important functions of it for recording.</p>
 <ol>
-<li>Based on static word embeddings from pretrained models, finetuning with basic CNN models may get good results.</li>
-<li>Finetuning pretrained word embeddings can be useful.</li>
-<li>Making use of both static and task-specific vectors is possible.</li>
-<li>They got SOTAs on 4/7 tasks for sentiment analysis and question classifications.</li>
+<li>push a new item into a min heap.(heapq.heappush)</li>
 </ol>
-<p><strong>Introduction:</strong></p>
-<ol>
-<li>Deep learning</li>
-<li>word vectors</li>
-<li>CNN in NLP(semantic parsing, search query retrieving, and other traditional NLP tasks)</li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Add a new item from pos to startpos in order to find a proper position to maintain the heap structure.</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_siftdown</span>(<span class="hljs-params">h, startpos, pos</span>):</span><br>  newitem = h[pos]<br><br>  <span class="hljs-keyword">while</span> pos &gt; startpos:<br>    <span class="hljs-comment"># Find the parent postion by dividing 2.</span><br>    parentpos = (pos - <span class="hljs-number">1</span>) &gt;&gt; <span class="hljs-number">2</span><br>    <span class="hljs-comment"># If the new parent is larger, move the new item up.</span><br>    <span class="hljs-keyword">if</span> h[parentpos] &gt; newitem:<br>      h[pos] = h[parentpos]<br>      pos = parentpos<br><br>      <span class="hljs-keyword">continue</span><br>     <span class="hljs-comment"># If the parent is not larger, we have found the place.</span><br>     <span class="hljs-keyword">break</span><br>     <span class="hljs-comment"># Set the value.</span><br>     h[pos] = newitem<br>            <br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heappush</span>(<span class="hljs-params">h, item</span>):</span><br>  h.append(item)<br>  _siftdown(h, <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(h)-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>pop the min value and adjust.(heapq.heappop)</li>
 </ol>
-<p><strong>Model</strong></p>
-<p><img src="/site/img/textcnn1.png"></p>
-<ol>
-<li>k-dimensional word embedding as input(2 channels static and non-static)</li>
-<li>kernel size {3*4*5}*k as different filters, then max pooling(mulple filters to produce multiple feature maps for one word)</li>
-<li>Fc layer with softmax</li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_siftup</span>(<span class="hljs-params">h, pos</span>):</span><br>  <span class="hljs-comment"># Move the position to the leaf and siftdown.</span><br>  endpos = <span class="hljs-built_in">len</span>(h)<br>  val = h[pos]<br>  startpos = pos<br>  childpos = pos*<span class="hljs-number">2</span> + <span class="hljs-number">1</span><br>  <span class="hljs-keyword">while</span> childpos &lt; endpos:<br>    rightpos = childpos + <span class="hljs-number">1</span><br><br>    <span class="hljs-comment"># Always swap a smaller value up.</span><br>    <span class="hljs-keyword">if</span> rightpos &lt; endpos <span class="hljs-keyword">and</span> h[rightpos] &lt; h[childpos]:<br>      rightpos, childpos = childpos, rightpos<br>    h[pos] = h[childpos]<br><br>    <span class="hljs-comment"># Update pos to adjust the remaining tree.</span><br>    pos = childpos<br>    childpos = <span class="hljs-number">2</span>*pos + <span class="hljs-number">1</span><br><br>  h[pos] = val<br><br>  <span class="hljs-comment"># Find a place for the starting pos value.</span><br>  _siftdown(h, startpos, pos)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heappop</span>(<span class="hljs-params">heap</span>):</span><br>    <span class="hljs-string">&quot;&quot;&quot;Pop the smallest item off the heap, maintaining the heap invariant.&quot;&quot;&quot;</span><br>    lastelt = heap.pop()    <span class="hljs-comment"># raises appropriate IndexError if heap is empty</span><br>    <span class="hljs-keyword">if</span> heap:<br>        returnitem = heap[<span class="hljs-number">0</span>]<br>        heap[<span class="hljs-number">0</span>] = lastelt<br>        _siftup(heap, <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> returnitem<br>    <span class="hljs-keyword">return</span> lastelt<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>heapify, O(n)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heapify</span>(<span class="hljs-params">x</span>):</span><br>  n = <span class="hljs-built_in">len</span>(x)<br>  <span class="hljs-comment"># Transform bottom-up.  The largest index there&#x27;s any point to looking at</span><br>  <span class="hljs-comment"># is the largest with a child index in-range, so must have 2*i + 1 &lt; n,</span><br>  <span class="hljs-comment"># or i &lt; (n-1)/2.  If n is even = 2*j, this is (2*j-1)/2 = j-1/2 so</span><br>  <span class="hljs-comment"># j-1 is the largest, which is n//2 - 1.  If n is odd = 2*j+1, this is</span><br>  <span class="hljs-comment"># (2*j+1-1)/2 = j so j-1 is the largest, and that&#x27;s again n//2-1.</span><br>  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">reversed</span>(<span class="hljs-built_in">range</span>(n//<span class="hljs-number">2</span>)):<br>    _siftup(x, i)<br><br></code></pre></td></tr></table></figure></li>
+<li><p>heapsort</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heapsort</span>(<span class="hljs-params">x</span>):</span><br>  heapify(x)<br>  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">reversed</span>(<span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(x)//<span class="hljs-number">2</span>)):<br>    _siftup(x, i)<br><br></code></pre></td></tr></table></figure></li>
 </ol>
-<p><strong>Non-static vs static</strong></p>
-<p><img src="/site/img/textcnn2.png"></p>
-<p>Non-static(parameters are updated rather than frozened) is more specific and accurate on tasks.</p>
-<p><strong>Implementations:</strong></p>
-<p>TODO</p>
 
             </div>
             <hr>
@@ -272,7 +262,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/site/categories/Natual-Language-Processing/">Natual Language Processing</a>
+                      <a class="hover-with-bg" href="/site/categories/data-structures-and-algorithm/">data structures and algorithm</a>
                     
                   </div>
                 
@@ -280,9 +270,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/site/tags/paper-reading/">paper-reading</a>
+                      <a class="hover-with-bg" href="/site/tags/data-structures-and-algorithm/">data structures and algorithm</a>
                     
-                      <a class="hover-with-bg" href="/site/tags/NLP/">NLP</a>
+                      <a class="hover-with-bg" href="/site/tags/heap/">heap</a>
                     
                   </div>
                 
@@ -293,18 +283,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/site/2021/07/07/Transformer/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Paper-reading transformer</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/site/2021/06/30/hello-world/">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/site/2021/09/12/technology%20trend/">
+                        <span class="hidden-mobile">Create a trend</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

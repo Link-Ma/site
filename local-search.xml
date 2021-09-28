@@ -4,25 +4,25 @@
   
   
   <entry>
-    <title>Create a trend</title>
-    <link href="/site/2021/09/12/technology%20trend/"/>
-    <url>/site/2021/09/12/technology%20trend/</url>
+    <title>heap</title>
+    <link href="/site/2021/09/27/heap/"/>
+    <url>/site/2021/09/27/heap/</url>
     
-    <content type="html"><![CDATA[<p>Today, Andrew Ng announced a campaign to have <a href="https://www.forbes.com/sites/gilpress/2021/06/16/andrew-ng-launches-a-campaign-for-data-centric-ai/?sh=704aea0974f5">data-centric AI</a> which is inspiring, but I am thinking about what he is doing as a thought leader.</p><p>It is said that following the trend is always smart, but creating a trend is even smarter and respectable. For leaders either in academic field or organizations, one of their main task is to create new concepts, sell them, make them happen, and be responsible for the outcomes. As Jeff Bezos said, leaders have 2 to 3 important decisions to make every day. Leaders also have 2 to 3 trends to create every year. As engineers become more versant as individual contributors, they may also put themselves into leaders’ positions and think in their shoes.</p>]]></content>
+    <content type="html"><![CDATA[<p>Heap is an intricate data structure. By maintaining a binary tree structure without external strorage, it is widely used in many cases like sorting, topk elements, and others. Here are important functions of it for recording.</p><ol><li>push a new item into a min heap.(heapq.heappush)</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Add a new item from pos to startpos in order to find a proper position to maintain the heap structure.</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_siftdown</span>(<span class="hljs-params">h, startpos, pos</span>):</span><br>  newitem = h[pos]<br><br>  <span class="hljs-keyword">while</span> pos &gt; startpos:<br>    <span class="hljs-comment"># Find the parent postion by dividing 2.</span><br>    parentpos = (pos - <span class="hljs-number">1</span>) &gt;&gt; <span class="hljs-number">2</span><br>    <span class="hljs-comment"># If the new parent is larger, move the new item up.</span><br>    <span class="hljs-keyword">if</span> h[parentpos] &gt; newitem:<br>      h[pos] = h[parentpos]<br>      pos = parentpos<br><br>      <span class="hljs-keyword">continue</span><br>     <span class="hljs-comment"># If the parent is not larger, we have found the place.</span><br>     <span class="hljs-keyword">break</span><br>     <span class="hljs-comment"># Set the value.</span><br>     h[pos] = newitem<br>            <br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heappush</span>(<span class="hljs-params">h, item</span>):</span><br>  h.append(item)<br>  _siftdown(h, <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(h)-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure><ol start="2"><li>pop the min value and adjust.(heapq.heappop)</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_siftup</span>(<span class="hljs-params">h, pos</span>):</span><br>  <span class="hljs-comment"># Move the position to the leaf and siftdown.</span><br>  endpos = <span class="hljs-built_in">len</span>(h)<br>  val = h[pos]<br>  startpos = pos<br>  childpos = pos*<span class="hljs-number">2</span> + <span class="hljs-number">1</span><br>  <span class="hljs-keyword">while</span> childpos &lt; endpos:<br>    rightpos = childpos + <span class="hljs-number">1</span><br><br>    <span class="hljs-comment"># Always swap a smaller value up.</span><br>    <span class="hljs-keyword">if</span> rightpos &lt; endpos <span class="hljs-keyword">and</span> h[rightpos] &lt; h[childpos]:<br>      rightpos, childpos = childpos, rightpos<br>    h[pos] = h[childpos]<br><br>    <span class="hljs-comment"># Update pos to adjust the remaining tree.</span><br>    pos = childpos<br>    childpos = <span class="hljs-number">2</span>*pos + <span class="hljs-number">1</span><br><br>  h[pos] = val<br><br>  <span class="hljs-comment"># Find a place for the starting pos value.</span><br>  _siftdown(h, startpos, pos)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heappop</span>(<span class="hljs-params">heap</span>):</span><br>    <span class="hljs-string">&quot;&quot;&quot;Pop the smallest item off the heap, maintaining the heap invariant.&quot;&quot;&quot;</span><br>    lastelt = heap.pop()    <span class="hljs-comment"># raises appropriate IndexError if heap is empty</span><br>    <span class="hljs-keyword">if</span> heap:<br>        returnitem = heap[<span class="hljs-number">0</span>]<br>        heap[<span class="hljs-number">0</span>] = lastelt<br>        _siftup(heap, <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> returnitem<br>    <span class="hljs-keyword">return</span> lastelt<br></code></pre></td></tr></table></figure><ol start="3"><li><p>heapify, O(n)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heapify</span>(<span class="hljs-params">x</span>):</span><br>  n = <span class="hljs-built_in">len</span>(x)<br>  <span class="hljs-comment"># Transform bottom-up.  The largest index there&#x27;s any point to looking at</span><br>  <span class="hljs-comment"># is the largest with a child index in-range, so must have 2*i + 1 &lt; n,</span><br>  <span class="hljs-comment"># or i &lt; (n-1)/2.  If n is even = 2*j, this is (2*j-1)/2 = j-1/2 so</span><br>  <span class="hljs-comment"># j-1 is the largest, which is n//2 - 1.  If n is odd = 2*j+1, this is</span><br>  <span class="hljs-comment"># (2*j+1-1)/2 = j so j-1 is the largest, and that&#x27;s again n//2-1.</span><br>  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">reversed</span>(<span class="hljs-built_in">range</span>(n//<span class="hljs-number">2</span>)):<br>    _siftup(x, i)<br><br></code></pre></td></tr></table></figure></li><li><p>heapsort</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heapsort</span>(<span class="hljs-params">x</span>):</span><br>  heapify(x)<br>  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">reversed</span>(<span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(x)//<span class="hljs-number">2</span>)):<br>    _siftup(x, i)<br><br></code></pre></td></tr></table></figure></li></ol>]]></content>
     
     
     <categories>
       
-      <category>zoom-out</category>
+      <category>data structures and algorithm</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>zoom-out</tag>
+      <tag>data structures and algorithm</tag>
       
-      <tag>technology</tag>
+      <tag>heap</tag>
       
     </tags>
     
@@ -31,11 +31,11 @@
   
   
   <entry>
-    <title>Some thoughts about technology management</title>
-    <link href="/site/2021/09/11/technology%20management/"/>
-    <url>/site/2021/09/11/technology%20management/</url>
+    <title>Create a trend</title>
+    <link href="/site/2021/09/12/technology%20trend/"/>
+    <url>/site/2021/09/12/technology%20trend/</url>
     
-    <content type="html"><![CDATA[<h2 id="Sometimes-we-need-to-look-ahead-to-have-a-high-level-perspective-For-programmers-think-beyond-coding"><a href="#Sometimes-we-need-to-look-ahead-to-have-a-high-level-perspective-For-programmers-think-beyond-coding" class="headerlink" title="Sometimes we need to look ahead to have a high-level perspective. For programmers, think beyond coding!"></a>Sometimes we need to look ahead to have a high-level perspective. For programmers, think beyond coding!</h2><p>There goes a famous saying, a soldier who does not want to be a general is not a good soldier. For programmers, I am thinking about what CTOs might focus on. Here is what I can see for now.</p><ol><li>Less code. Legacy code and models can be really problemistic for teams. Not changeable, not moveable, not comprehensive as the team grows.</li><li>Minimum viable product(mvp) is badly needed to get credits and earn more investment and confidence.</li><li>Stability versus innovation. We need to strike a balance of the both. For large or developed companies, stability is the priority. Vice versa for startups.</li><li>Manage talents and technology like a flow. Just like what CFOs are doing with finance flow.</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>Today, Andrew Ng announced a campaign to have <a href="https://www.forbes.com/sites/gilpress/2021/06/16/andrew-ng-launches-a-campaign-for-data-centric-ai/?sh=704aea0974f5">data-centric AI</a> which is inspiring, but I am thinking about what he is doing as a thought leader.</p><p>It is said that following the trend is always smart, but creating a trend is even smarter and respectable. For leaders either in academic field or organizations, one of their main task is to create new concepts, sell them, make them happen, and be responsible for the outcomes. As Jeff Bezos said, leaders have 2 to 3 important decisions to make every day. Leaders also have 2 to 3 trends to create every year. As engineers become more versant as individual contributors, they may also put themselves into leaders’ positions and think in their shoes.</p>]]></content>
     
     
     <categories>
@@ -85,6 +85,33 @@
   
   
   <entry>
+    <title>Some thoughts about technology management</title>
+    <link href="/site/2021/09/11/technology%20management/"/>
+    <url>/site/2021/09/11/technology%20management/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Sometimes-we-need-to-look-ahead-to-have-a-high-level-perspective-For-programmers-think-beyond-coding"><a href="#Sometimes-we-need-to-look-ahead-to-have-a-high-level-perspective-For-programmers-think-beyond-coding" class="headerlink" title="Sometimes we need to look ahead to have a high-level perspective. For programmers, think beyond coding!"></a>Sometimes we need to look ahead to have a high-level perspective. For programmers, think beyond coding!</h2><p>There goes a famous saying, a soldier who does not want to be a general is not a good soldier. For programmers, I am thinking about what CTOs might focus on. Here is what I can see for now.</p><ol><li>Less code. Legacy code and models can be really problemistic for teams. Not changeable, not moveable, not comprehensive as the team grows.</li><li>Minimum viable product(mvp) is badly needed to get credits and earn more investment and confidence.</li><li>Stability versus innovation. We need to strike a balance of the both. For large or developed companies, stability is the priority. Vice versa for startups.</li><li>Manage talents and technology like a flow. Just like what CFOs are doing with finance flow.</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>zoom-out</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>zoom-out</tag>
+      
+      <tag>technology</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Paper-reading GAN</title>
     <link href="/site/2021/09/10/GAN/"/>
     <url>/site/2021/09/10/GAN/</url>
@@ -101,9 +128,9 @@
     
     <tags>
       
-      <tag>cv</tag>
-      
       <tag>paper-reading</tag>
+      
+      <tag>cv</tag>
       
       <tag>gan</tag>
       
@@ -145,6 +172,33 @@
   
   
   <entry>
+    <title>Paper-reading DQN</title>
+    <link href="/site/2021/07/07/DQN/"/>
+    <url>/site/2021/07/07/DQN/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Paper:</strong> DQN </p><p><strong>Task:</strong> Play video games</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li><p>Image part:</p><p>Preprocessing: gray-scale(avg of 3 RGB channels)</p><p>Down-sampling: 210x160 to 110x84</p><p>Cropping: Get center game area 84x84</p><p>Game part:</p><p>Key frame: only obtain frames periodically(4 or 3 steps for 1)</p><p>Appy 4 frames as the input of Q-network to get historical info.</p><p>Reward clipping: only 3 rewards: +1, -1, 0</p><p>Reasons:</p><p>Image part: common operations.</p><p>Game part: </p><p>Key frame: 1. save time 2. reduce noise from tight actions 3. reduce the duration from action to reward signal.</p><p>4 frames: more context.</p><p>Reward clipping: despite the loss of info, it guarantees the same reward scale for all games.</p></li><li><p>Replay buffer</p><p>definition: a queue to store past transitions for sampling during training</p><p>How to use: proper size. if too little, training data distribution may change instantly; if too large, reward signal may be too sparse.</p><p>Reasons: 1. SGD requires independent samples, but neighboring transitions are highly relative. 2. a pool of transitions make the training more stable. 3. for offline learning, it reduces the variance of updates. 4. multiple sampling allowed to increase data efficiency.</p></li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Reinforcement Learning</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>RL</tag>
+      
+      <tag>paper-reading</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Deep Compression</title>
     <link href="/site/2021/07/07/Deep%20Compression/"/>
     <url>/site/2021/07/07/Deep%20Compression/</url>
@@ -166,6 +220,35 @@
       <tag>model compression</tag>
       
       <tag>edge</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Paper-reading StackGan</title>
+    <link href="/site/2021/07/07/StackGan/"/>
+    <url>/site/2021/07/07/StackGan/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Paper:</strong> StackGan <a href="https://links.jianshu.com/go?to=https://arxiv.org/pdf/1612.03242.pdf">https://arxiv.org/pdf/1612.03242.pdf</a></p><p><strong>Task:</strong> Text to Image</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li>Two stage GAN: Low-quality images are generated in stage 1 and parameters frozened to feed stage-2 GAN to generate high resolution images.</li><li>Conditional augmentation: To solve training data deficiency, they calculat mean and variance in a FC layer following the word embedding layer to sample conditional variant c. They also apply KL divergence over the above distribution and normal one(N(0,1)) as regulization. It helps generate more training data and after increasing sampling randomness, one sentence can output different images.</li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>cv</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>paper-reading</tag>
+      
+      <tag>cv</tag>
+      
+      <tag>GAN</tag>
       
     </tags>
     
@@ -220,62 +303,6 @@
       <tag>paper-reading</tag>
       
       <tag>NLP</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Paper-reading DQN</title>
-    <link href="/site/2021/07/07/DQN/"/>
-    <url>/site/2021/07/07/DQN/</url>
-    
-    <content type="html"><![CDATA[<p><strong>Paper:</strong> DQN </p><p><strong>Task:</strong> Play video games</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li><p>Image part:</p><p>Preprocessing: gray-scale(avg of 3 RGB channels)</p><p>Down-sampling: 210x160 to 110x84</p><p>Cropping: Get center game area 84x84</p><p>Game part:</p><p>Key frame: only obtain frames periodically(4 or 3 steps for 1)</p><p>Appy 4 frames as the input of Q-network to get historical info.</p><p>Reward clipping: only 3 rewards: +1, -1, 0</p><p>Reasons:</p><p>Image part: common operations.</p><p>Game part: </p><p>Key frame: 1. save time 2. reduce noise from tight actions 3. reduce the duration from action to reward signal.</p><p>4 frames: more context.</p><p>Reward clipping: despite the loss of info, it guarantees the same reward scale for all games.</p></li><li><p>Replay buffer</p><p>definition: a queue to store past transitions for sampling during training</p><p>How to use: proper size. if too little, training data distribution may change instantly; if too large, reward signal may be too sparse.</p><p>Reasons: 1. SGD requires independent samples, but neighboring transitions are highly relative. 2. a pool of transitions make the training more stable. 3. for offline learning, it reduces the variance of updates. 4. multiple sampling allowed to increase data efficiency.</p></li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Reinforcement Learning</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>paper-reading</tag>
-      
-      <tag>RL</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Paper-reading StackGan</title>
-    <link href="/site/2021/07/07/StackGan/"/>
-    <url>/site/2021/07/07/StackGan/</url>
-    
-    <content type="html"><![CDATA[<p><strong>Paper:</strong> StackGan <a href="https://links.jianshu.com/go?to=https://arxiv.org/pdf/1612.03242.pdf">https://arxiv.org/pdf/1612.03242.pdf</a></p><p><strong>Task:</strong> Text to Image</p><p><strong>Challenges:</strong> </p><ol><li>Lack of detail and low-quality problem for high resolution images.</li><li>To get high-resolution images, there are too many up-sampling layers which make unstable training and meaningless output.</li></ol><p><strong>Existing methods:</strong></p><ol><li>VAE</li><li>PixelRNN</li><li>Energy-based GAN</li><li>Super-resolution methods</li></ol><p><strong>Their innovations:</strong></p><ol><li>Two stage GAN: Low-quality images are generated in stage 1 and parameters frozened to feed stage-2 GAN to generate high resolution images.</li><li>Conditional augmentation: To solve training data deficiency, they calculat mean and variance in a FC layer following the word embedding layer to sample conditional variant c. They also apply KL divergence over the above distribution and normal one(N(0,1)) as regulization. It helps generate more training data and after increasing sampling randomness, one sentence can output different images.</li></ol><p><strong>Implementations:</strong></p><p>TODO</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>cv</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>cv</tag>
-      
-      <tag>paper-reading</tag>
-      
-      <tag>GAN</tag>
       
     </tags>
     
