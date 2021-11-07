@@ -4,36 +4,9 @@
   
   
   <entry>
-    <title>Computer Vision Paper List</title>
-    <link href="/site/2021/09/28/paper/"/>
-    <url>/site/2021/09/28/paper/</url>
-    
-    <content type="html"><![CDATA[<p>Fundamental papers to read in each applications in computer vision:</p><ul><li><p>baseline</p><ul><li>Alexnet</li><li>VGG</li><li>GoogLeNet v1-v4</li><li>ResNet</li><li>ResNeXt</li><li>DenseNet</li><li>SEnet</li></ul></li><li><p>image segmentation</p><ul><li>FCN</li><li>Unet</li><li>SegNet</li><li>DeepLab</li><li>GCN</li><li>DFN</li><li>ENet</li><li>BiSeNet</li><li>DFANet</li><li>RedNet</li><li>RDFNet</li></ul></li><li><p>object detection</p><ul><li>YOLO</li><li>SSD</li><li>FasterRCNN</li><li>FPN</li><li>RETINANet</li><li>MaskRCNN</li><li>Fcos</li><li>EfficientNet</li><li>Cascade</li><li>CenterNet</li></ul></li><li><p>Gan</p><ul><li>GAN</li><li>cGAN</li><li>DCGAN</li><li>ITGAN</li><li>pix2pix</li><li>cycleGan</li><li>ProGan</li><li>StackGan</li><li>BigGan</li><li>StyleGan</li></ul></li><li><p>ocr</p><ul><li>CRNN</li><li>attention_OCR</li><li>CTPN</li><li>EAST</li><li>Adv_EAST</li><li>PSE</li><li>PAN</li><li>DB</li></ul></li><li><p>light-weight network</p><ul><li>MobileNet</li><li>ShuffleNet</li><li>SqueezeNet</li><li>xception</li><li>Knowledge Disdilation</li><li>attention-transfer</li><li>Learning wights and connections</li><li>Network Slimming</li><li>Prunning for efficient inference</li></ul></li><li><p>cv transformer</p></li><li><p>face recognition</p><ul><li>eigenFaces for recognition</li><li>FaceNet</li><li>DeepId</li><li>A discriminative feature learning Approach for Deep Face Recognition</li><li>Large-Margin softmax loss for CNN</li><li>Sphere-Face</li></ul></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>cv</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>paper-reading</tag>
-      
-      <tag>cv</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Graph Neural Nets Paper List</title>
-    <link href="/site/2021/09/28/paper_graph/"/>
-    <url>/site/2021/09/28/paper_graph/</url>
+    <link href="/site/2021/11/07/paper_graph2/"/>
+    <url>/site/2021/11/07/paper_graph2/</url>
     
     <content type="html"><![CDATA[<p>Fundamental papers to read in graph neural nets:</p><ul><li>node2vec</li><li>line</li><li>sdne</li><li>metapath2vec</li><li>transe</li><li>gat</li><li>graphsage</li><li>gcn</li><li>ggnn</li><li>mpnn</li><li>hgt</li></ul>]]></content>
     
@@ -59,8 +32,8 @@
   
   <entry>
     <title>Natual Language Processing Paper List</title>
-    <link href="/site/2021/09/28/paper_nlp/"/>
-    <url>/site/2021/09/28/paper_nlp/</url>
+    <link href="/site/2021/11/07/paper_nlp2/"/>
+    <url>/site/2021/11/07/paper_nlp2/</url>
     
     <content type="html"><![CDATA[<p>Fundamental papers to read in each applications in NLP:</p><ul><li><p>baseline</p><ul><li>Word2Vec</li><li>glove</li><li>char embedding</li><li>textcnn</li><li>chartextcnn</li><li>fasttext</li><li>deep_nmt</li><li>attention_nmt</li><li>han_attention</li><li>sequence generation model - sgm</li></ul></li><li><p>information extraction - named entity recognition</p><ul><li>BiLSTM-CRF</li><li>LatticeLSTM</li><li>LR-CNN</li><li>LGN</li><li>TENER</li><li>Soft-Lexicon</li></ul></li><li><p>information extraction - relationship extraction</p><ul><li>CNN for re</li><li>pcnn-crcnn</li><li>pcnn-code</li><li>att-blstm</li><li>lstm-lstm-bias</li><li>casrel</li></ul></li><li><p>Pretrained model</p><ul><li>transformer</li><li>transformer-xl</li><li>elmo</li><li>gpt</li><li>bert</li><li>ulmfit</li><li>albert</li><li>mass</li><li>xlnet</li><li>electra</li></ul></li><li><p>semantic text matching</p><ul><li>dssm</li><li>siamesenet</li><li>compare-aggregate</li><li>esim</li><li>BiMPM</li><li>RE2</li><li>MGCN</li><li>MatchPyramid</li><li>semantic aware bert for language understanding</li></ul></li><li><p>translation</p><ul><li>loung-nmt</li><li>coverage</li><li>subword-nmt</li><li>massive exploration of neural machine translation architectures</li></ul></li><li><p>emotional analysis</p><ul><li>tree lstm</li><li>td-lstm &amp; at-lstm</li><li>MemNet&amp;IAN</li><li>Bert&amp;Ernie</li></ul></li><li><p>Reading comprehension</p><ul><li>Teaching machines to read and comprehend</li><li>bidaf</li><li>pgnet</li><li>Improving the robustness of question answering systems to question paraphrasing</li><li>xlnet</li></ul></li></ul>]]></content>
     
@@ -77,6 +50,33 @@
       <tag>paper-reading</tag>
       
       <tag>nlp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Computer Vision Paper List</title>
+    <link href="/site/2021/09/28/paper/"/>
+    <url>/site/2021/09/28/paper/</url>
+    
+    <content type="html"><![CDATA[<p>Fundamental papers to read in each applications in computer vision:</p><ul><li><p>baseline</p><ul><li>Alexnet</li><li>VGG</li><li>GoogLeNet v1-v4</li><li>ResNet</li><li>ResNeXt</li><li>DenseNet</li><li>SEnet</li></ul></li><li><p>image segmentation</p><ul><li>FCN</li><li>Unet</li><li>SegNet</li><li>DeepLab</li><li>GCN</li><li>DFN</li><li>ENet</li><li>BiSeNet</li><li>DFANet</li><li>RedNet</li><li>RDFNet</li></ul></li><li><p>object detection</p><ul><li>YOLO</li><li>SSD</li><li>FasterRCNN</li><li>FPN</li><li>RETINANet</li><li>MaskRCNN</li><li>Fcos</li><li>EfficientNet</li><li>Cascade</li><li>CenterNet</li></ul></li><li><p>Gan</p><ul><li>GAN</li><li>cGAN</li><li>DCGAN</li><li>ITGAN</li><li>pix2pix</li><li>cycleGan</li><li>ProGan</li><li>StackGan</li><li>BigGan</li><li>StyleGan</li></ul></li><li><p>ocr</p><ul><li>CRNN</li><li>attention_OCR</li><li>CTPN</li><li>EAST</li><li>Adv_EAST</li><li>PSE</li><li>PAN</li><li>DB</li></ul></li><li><p>light-weight network</p><ul><li>MobileNet</li><li>ShuffleNet</li><li>SqueezeNet</li><li>xception</li><li>Knowledge Disdilation</li><li>attention-transfer</li><li>Learning wights and connections</li><li>Network Slimming</li><li>Prunning for efficient inference</li></ul></li><li><p>cv transformer</p></li><li><p>face recognition</p><ul><li>eigenFaces for recognition</li><li>FaceNet</li><li>DeepId</li><li>A discriminative feature learning Approach for Deep Face Recognition</li><li>Large-Margin softmax loss for CNN</li><li>Sphere-Face</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>cv</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>paper-reading</tag>
+      
+      <tag>cv</tag>
       
     </tags>
     
