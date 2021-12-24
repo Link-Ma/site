@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Paper-reading node2vec</title>
+    <link href="/site/2021/12/23/node2vec/"/>
+    <url>/site/2021/12/23/node2vec/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Paper:</strong> node2vec</p><p><strong>Task:</strong> representation learning for graphs </p><p><strong>Abstracts:</strong> </p><ol><li>to learn the representations to maximize the likelihood of preserving the neighborhoods of nodes.</li><li>they generalize the previous rigid definition of neighbors.</li><li>SOTA on multi-label classification and link prediction.</li></ol><p><strong>Key concepts:</strong></p><p><strong>Neighborhoods exploration strategies:</strong> </p><p>BFS(communities, homophily) or DFS(structural equivalence)</p><p><img src="/site/img/node2vec1.png"></p><p><strong>Edge representation:</strong></p><p>Applying binary operators(avg, product, L1, L2) to two nodes.</p><p>Search bias controlling with p and q:</p><p>p controls the likelihood of revisiting current node.</p><p>q &gt; 1 for BFS bias, q &lt; 1 for DFS bias.</p><p><strong>Pseudo code:</strong></p><p><img src="/site/img/node2vec2.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>gnn</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>paper-reading</tag>
+      
+      <tag>gnn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Business learning - organizational behavior reading</title>
     <link href="/site/2021/12/20/business_ob/"/>
     <url>/site/2021/12/20/business_ob/</url>
